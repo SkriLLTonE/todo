@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TodoList</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="content">
+                <form>
+                    <input type="text" class="inputs" :placeholder="title" v-model="titleValue">
+                    <input type="text" class="inputs" :placeholder="body" v-model="bodyValue">
+                    <button class="btn">Создать</button>
+                </form>
+                <h1> Колличество заметок</h1>
+                <!-- <h3>{{titleValue}}</h3>
+                <h3>{{bodyValue}}</h3> -->
+                <h1>Список пуст</h1>
+                <div class="text__content">
+                    <div class="text">
+                        <h2>2</h2>
+                        <div>
+                            <h3>Lorem, ipsum.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus reiciendis odio cumque
+                                possimus quae, necessitatibus cum ut facere, culpa reprehenderit, ab sint nam sed id
+                                omnis cupiditate ullam deleniti veniam.</p>
+                        </div>
+                        <button class="danger btn">Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
