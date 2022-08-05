@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TodoList</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="content">
+                <form @submit.prevent>
+                    <input type="text" class="inputs" :placeholder="title" v-model="titleValue">
+                    <input type="text" class="inputs" :placeholder="body" v-model="bodyValue">
+                    <button class="btn" @click="addNote()">Создать</button>
+                </form>
+                <h1 v-if='arr.length > 0'> Колличество заметок {{arr.length}}</h1>
+                <h1 v-else>Список пуст</h1>
+                <div class="text__content" v-for="(item, index) in arr">
+                    <div class="text">
+                        <h2>{{item.id}}</h2>
+                        <div>
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.body}}</p>
+                        </div>
+                        <button class="danger btn" @click="removeNote(index)">Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
